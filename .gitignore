@@ -1,0 +1,9 @@
+# Mac
+.DS_Store
+
+# Python
+__pycache__/
+.env
+
+# Audio files
+*.mp3
