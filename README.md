@@ -11,6 +11,8 @@ simulation.
 ## Dependencies
 
 1. Librosa (for mac, pip install librosa)
+2. Pygame
 
 ## Setup
-1. Dowload an mp3 version of "Uptown Funk" as save it in assets: /assets/uptown_funk.mp3
+
+1. Download an mp3 version of "Uptown Funk" and save it in assets: /assets/uptown_funk.mp3
