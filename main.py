@@ -6,7 +6,6 @@ from env_setup import make_env
 from beat_detection import detect_downbeats
 from choreography import build_cue_list, get_current_cue
 from pose_library import get_pose
-from pid import PID
 
 
 def start_audio(audio_path):
@@ -31,10 +30,8 @@ def run(audio_path="./assets/uptown_funk.mp3", play_audio=True):
     env = make_env()
     obs = env.reset()
 
-    # PIDs
-    pid_left  = PID(kp=0.6, ki=0.5, kd=0.2, target=get_pose("neutral")[:7])
-    pid_right = PID(kp=0.6, ki=0.5, kd=0.2, target=get_pose("neutral")[7:])
     last_pose = "neutral"
+    current_action = get_pose("neutral")
 
     if play_audio:
         start_time = start_audio(audio_path)
@@ -42,13 +39,9 @@ def run(audio_path="./assets/uptown_funk.mp3", play_audio=True):
         start_time = time.time()
         print("Running without audio")
 
-    last_time = time.time()
-
     try:
         while True:
             current_time = time.time() - start_time
-            dt = time.time() - last_time
-            last_time = time.time()
 
             if current_time > 6.0:
                 print("Done!")
@@ -56,17 +49,11 @@ def run(audio_path="./assets/uptown_funk.mp3", play_audio=True):
 
             cue = get_current_cue(cue_list, current_time)
             if cue and cue["pose"] != last_pose:
-                pose = get_pose(cue["pose"])
-                pid_left.reset(target=pose[:7])
-                pid_right.reset(target=pose[7:])
+                print(f"t={current_time:.2f}s  beat: {cue['pose']}")
+                current_action = get_pose(cue["pose"])
                 last_pose = cue["pose"]
 
-            current_joints = obs["robot0_joint_pos"]
-            left_action  = pid_left.update(current_joints[:7], dt=dt)
-            right_action = pid_right.update(current_joints[7:], dt=dt)
-            action = np.concatenate([left_action, right_action])
-
-            obs, _, _, _ = env.step(action)
+            obs, _, _, _ = env.step(current_action)
             env.render()
 
     except KeyboardInterrupt:
