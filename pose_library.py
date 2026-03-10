@@ -10,33 +10,69 @@ import numpy as np
 # w2 -> wrist twist
 
 POSES = {
-    # Arms relaxed at sides
+    # Arms crossed
     "neutral": np.array([
         0, 0,  0.0,  0.0,  0.0,  0.0,  0.0,             # right arm
         0, 0,  0.0,  0.0,  0.0,  0.0,  0.0,             # left arm
         -1.0, -1.0                                      # grippers open
     ]),
 
-    # Arms stretched out to sides
+    # Arms bent out to sides (T-pose)
     "arms_wide": np.array([
-        3, 0,  0.0,  0.0,  0.0,  0.0,  0.0,
-        -3, 0,  0.0,  0.0,  0.0,  0.0,  0.0,
-        -1.0, -1.0                                      # grippers open
+        -0.52, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,             # right arm
+         0.52, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,             # left arm
+         -1.0, -1.0                                           #grippers open
+    ]),
+
+    "tut1": np.array([
+        -0.52, 0.0,  0.0,  1.57,  0.0,  1.57,  0.0,             # right arm
+         0.52, 0.0,  0.0,  1.57,  0.0,  1.57,  0.0,             # left arm
+         -1.0, -1.0                                             #grippers 
+    ]),
+
+    "wrists_bent1": np.array([
+        -0.52, 0.0,  0.0,  0.0,  0.0,  1.57,  0.0,            
+        0.52, 0.0,  0.0,  0.0,  0.0,  -1.57,  0.0,             
+        -1.0, -1.0                           
+    ]),
+
+    "wrists_bent2": np.array([
+        -0.52, 0.0,  0.0,  0.0,  0.0,  -1.57,  0.0,            
+        0.52, 0.0,  0.0,  0.0,  0.0,  1.57,  0.0,             
+        -1.0, -1.0                           
+    ]),
+
+    "wrists_bent_up": np.array([
+        -0.52, 0.0,  0.0,  0.0,  0.0,  -1.57,  0.0,            
+        0.52, 0.0,  0.0,  0.0,  0.0,  -1.57,  0.0,             
+        -1.0, -1.0  
+    ]),
+
+    "wrists_bent_down": np.array([
+        -0.52, 0.0,  0.0,  0.0,  0.0,  -1.57,  0.0,            
+        0.52, 0.0,  0.0,  0.0,  0.0,  -1.57,  0.0,             
+        -1.0, -1.0  
+    ]),
+    
+    "shrug": np.array([
+        -0.52, 0.52,  0.0,  0.78,  0.0,  -1.4,  0.0,            
+        0.52, 0.52,  0.0,  0.78,  0.0,  -1.4,  0.0,             
+        0.0, 0.0 
     ]),
 }
 
 # 10 beats covering the first 5 seconds
 SEQUENCE = [
-    "neutral",      # beat 1
-    "arms_wide",    # beat 2
-    "neutral",      # beat 3
-    "arms_wide",    # beat 4
-    "neutral",      # beat 5
-    "arms_wide",    # beat 6
-    "neutral",      # beat 7
-    "arms_wide",    # beat 8
-    "neutral",      # beat 9
-    "arms_wide",    # beat 10
+    "tut1",         # beat 1
+    "shrug",    # beat 2
+    "wrists_bent1",         # beat 3
+    "arms_wide",    
+    "tut1",         # beat 2
+    "wrists_bent_up",
+    "neutral",         # beat 2
+    "wrists_bent2",
+    "wrists_bent1",         # beat 2
+    "arms_wide",
 ]
 
 
