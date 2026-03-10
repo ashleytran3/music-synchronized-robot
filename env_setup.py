@@ -13,7 +13,7 @@ def make_env():
         has_renderer=True,
         has_offscreen_renderer=False,
         use_camera_obs=False,
-        control_freq=20,
+        control_freq=50,
         ignore_done=True,
         controller_configs=controller_config,
     )

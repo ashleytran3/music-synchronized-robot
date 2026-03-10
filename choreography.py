@@ -5,7 +5,8 @@ from pose_library import get_pose, SEQUENCE
 def build_cue_list(beat_times):
     cue_list = []
 
-    for i, beat_time in enumerate(beat_times[:10]):
+    # change this hardcoded time value later
+    for i, beat_time in enumerate(beat_times[:36]):
         pose_name = SEQUENCE[i]
         cue_list.append({
             "time": float(beat_time),
