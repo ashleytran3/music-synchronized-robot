@@ -150,11 +150,11 @@ SEQUENCE = [
     "spider_1",         # beat 22
     "line_2",           # beat 23
     "spider_2",         # beat 24
-    "arms_front",       # beat 25
+    "arms_wide",       # beat 25
     "clap",             # beat 26
-    "arms_front",       # beat 27
+    "arms_wide",       # beat 27
     "clap",             # beat 28
-    "arms_front",       # beat 29
+    "arms_wide",       # beat 29
     "clap",             # beat 30
     "point_left",       # beat 31
     "point_right",             # beat 32
