@@ -108,6 +108,20 @@ POSES = {
         -0.52, -1.0, 0, 2.0, 0, -1.5, 0,
         -1.0, -1.0  
     ]),
+
+    "point_left": np.array([
+        -0.52, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,            
+        -0.52, 0.0,  -1.57,  1.83,  0.0,  0.0,  0,             
+        0.0, 0.0
+    ]),
+
+    "point_right": np.array([
+        0.52, 0.0,  1.57,  1.83,  0.0,  0.0,  0.0,            
+        0.52, 0.0,  0.0, 0.0,  0.0,  0.0,  0,             
+        0.0, 0.0  
+    ]),
+
+
 }
 
 # 10 beats covering the first 5 seconds
@@ -142,8 +156,8 @@ SEQUENCE = [
     "clap",             # beat 28
     "arms_front",       # beat 29
     "clap",             # beat 30
-    "arms_front",       # beat 31
-    "clap",             # beat 32
+    "point_left",       # beat 31
+    "point_right",             # beat 32
     "front_box_1",      # beat 33
     "arms_wide",        # beat 34
     "front_box_2",      # beat 35
