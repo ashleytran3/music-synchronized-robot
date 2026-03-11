@@ -121,6 +121,17 @@ POSES = {
         0.0, 0.0  
     ]),
 
+    "point_right_wrists_down": np.array([
+        0.52, 0.0,  1.57,  1.83,  1.57,  -1.57,  0.0,            
+        0.52, 0.0,  0.0, 0.0,  0.0,  1.57,  0.0,             
+        0.0, 0.0  
+    ]),
+
+    "point_left_wrists_down": np.array([
+        -0.52, 0.0,  0.0,  0.0,  0.0,  1.57,  0.0,            
+        -0.52, 0.0,  -1.57, 1.83,  1.57,  1.57,  0.0,             
+        0.0, 0.0   
+    ])
 
 }
 
@@ -154,15 +165,18 @@ SEQUENCE = [
     "clap",             # beat 26
     "arms_wide",       # beat 27
     "clap",             # beat 28
-    "arms_wide",       # beat 29
-    "clap",             # beat 30
-    "point_left",       # beat 31
-    "point_right",             # beat 32
-    "front_box_1",      # beat 33
+    "arms_wide",       # beat 27
+    "clap",             # beat 28
+    "point_left",       # beat 29
+    "point_right",             # beat 30
+    "front_box_1",      # beat 31
+    "arms_wide",        # beat 32
+    "front_box_2",      # beat 33
     "arms_wide",        # beat 34
-    "front_box_2",      # beat 35
-    "arms_wide",        # beat 36
-
+    "clap",             # beat 35
+    "point_left_wrists_down", # beat 36
+    "point_right_wrists_down",   # beat 37
+    "neutral",       # beat 38
 ]
 
 
