@@ -202,6 +202,10 @@ SEQUENCE = [
     "point_left_wrists_down", # beat 36
     "point_right_wrists_down",   # beat 37
     "neutral",       # beat 38
+    "shoulder_triangles",    # beat 39
+    "shoulder_triangle_left", # 40
+    "shoulder_triangle_right", #43
+    "diagonal" # 44
 ]
 
 
