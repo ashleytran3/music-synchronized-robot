@@ -6,7 +6,7 @@ def build_cue_list(beat_times):
     cue_list = []
 
     # change this hardcoded time value later
-    for i, beat_time in enumerate(beat_times[:44]):
+    for i, beat_time in enumerate(beat_times[:48]):
         pose_name = SEQUENCE[i]
         cue_list.append({
             "time": float(beat_time),

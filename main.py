@@ -43,7 +43,7 @@ def run(audio_path="./assets/uptown_funk.mp3", play_audio=True):
         while True:
             current_time = time.time() - start_time
 
-            if current_time > 24.0:
+            if current_time > 30.0:
                 print("Done!")
                 break
 

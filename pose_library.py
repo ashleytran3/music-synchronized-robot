@@ -152,60 +152,82 @@ POSES = {
         0.0, 0.0  
     ]),
 
-    "diagnoal": np.array([
+    "diagonal": np.array([
          0.52, 0.0,  1.83,  1.83,  1.57,  1.57,  0.0,       
         -0.52, 0.0,  -1.31, 1.83,  1.83,  1.57,  0.0,             
         0.0, 0.0  
+    ]),
+
+    "diagonal_untangle_1": np.array([
+        0.52, 0.0,  1.83,  1.83,  1.57,  0.2,  0.0,       
+        -0.52, 0.0,  -1.31, 1.83,  1.83,  0.2,  0.0,             
+        0.0, 0.0   
+    ]),
+
+    "diagonal_untangle_2": np.array([
+        0.52, 0.0,  3.054,  1.83,  1.57,  0.2,  0.0,       
+        -0.52, 1.047,  -0.5, 1.83,  1.83,  0.2,  0.0,             
+        0.0, 0.0   
+    ]),
+
+    "straight": np.array([
+        0.8, 0.0,  0.0,  0,  0.0,  0.0,  0.0,             # right arm
+        -0.8, 0.0,  0.0,  0,  0.0,  0.0,  0.0,             # left arm
+         -1.0, -1.0   
     ]),
 
 }
 
 # 10 beats covering the first 5 seconds
 SEQUENCE = [
-    "tut1",             # beat 1
-    "shrug",            # beat 2
-    "wrists_bent1",     # beat 3
-    "arms_wide",        # beat 4
-    "tut1",             # beat 5
-    "wrists_bent_up",   # beat 6
-    "neutral",          # beat 7
-    "wrists_bent2",     # beat 8
-    "wrists_bent1",     # beat 9
-    "arms_wide",        # beat 10
-    "shrug",            # beat 11
-    "arms_wide",        # beat 12
-    "tut1",             # beat 13
-    "wrists_bent1",     # beat 14
-    "wrists_bent2",     # beat 15
-    "arms_wide",        # beat 16
-    "line_1",           # beat 17
-    "spider_1",         # beat 18
-    "line_2",           # beat 19
-    "spider_2",         # beat 20
-    "line_1",           # beat 21
-    "spider_1",         # beat 22
-    "line_2",           # beat 23
-    "spider_2",         # beat 24
-    "arms_wide",       # beat 25
-    "clap",             # beat 26
-    "arms_wide",       # beat 27
-    "clap",             # beat 28
-    "arms_wide",       # beat 27
-    "clap",             # beat 28
-    "point_left",       # beat 29
-    "point_right",             # beat 30
-    "front_box_1",      # beat 31
-    "arms_wide",        # beat 32
-    "front_box_2",      # beat 33
-    "arms_wide",        # beat 34
-    "clap",             # beat 35
-    "point_left_wrists_down", # beat 36
-    "point_right_wrists_down",   # beat 37
-    "neutral",       # beat 38
-    "shoulder_triangles",    # beat 39
-    "shoulder_triangle_left", # 40
-    "shoulder_triangle_right", #43
-    "diagonal" # 44
+    "tut1",                     # beat 1
+    "shrug",                    # beat 2
+    "wrists_bent1",             # beat 3
+    "arms_wide",                # beat 4
+    "tut1",                     # beat 5
+    "wrists_bent_up",           # beat 6
+    "neutral",                  # beat 7
+    "wrists_bent2",             # beat 8
+    "wrists_bent1",             # beat 9
+    "arms_wide",                # beat 10
+    "shrug",                    # beat 11
+    "arms_wide",                # beat 12
+    "tut1",                     # beat 13
+    "wrists_bent1",             # beat 14
+    "wrists_bent2",             # beat 15
+    "arms_wide",                # beat 16
+    "line_1",                   # beat 17
+    "spider_1",                 # beat 18
+    "line_2",                   # beat 19
+    "spider_2",                 # beat 20
+    "line_1",                   # beat 21
+    "spider_1",                 # beat 22
+    "line_2",                   # beat 23
+    "spider_2",                 # beat 24
+    "arms_wide",                # beat 25
+    "clap",                     # beat 26
+    "arms_wide",                # beat 27
+    "clap",                     # beat 28
+    "arms_wide",                # beat 29
+    "clap",                     # beat 30
+    "point_left",               # beat 31
+    "point_right",              # beat 32
+    "front_box_1",              # beat 33
+    "arms_wide",                # beat 34
+    "front_box_2",              # beat 35
+    "arms_wide",                # beat 36
+    "clap",                     # beat 37
+    "point_left_wrists_down",   # beat 38
+    "point_right_wrists_down",  # beat 39
+    "neutral",                  # beat 40
+    "shoulder_triangles",       # beat 41
+    "shoulder_triangle_left",   # beat 42
+    "shoulder_triangle_right",  # beat 43
+    "arms_wide",                # beat 44
+    "diagonal",                 # beat 45
+    "diagonal_untangle_1",      # beat 46
+    "diagonal_untangle_2",      # beat 47
+    "arms_wide",                 # beat 48
 ]
 
 
