@@ -8,7 +8,6 @@ def make_env():
     with open("baxter_joint_pos.json") as f:
         controller_config = json.load(f)
 
-    # register custom environment
     register_env(DanceEnv)
 
     env = suite.make(
