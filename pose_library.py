@@ -181,6 +181,30 @@ POSES = {
          -1.0, -1.0 
     ]),
 
+    "akimbo_1": np.array([
+        -0.52, 0.5,  0.0,  2,  0.0,  0.0,  0.0,             # right arm
+         0.52, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,             # left arm
+         -1.0, -1.0  
+    ]),
+
+    "akimbo_2": np.array([
+        -0.52, 0.5,  0.0,  2,  0.0,  0.0,  0.0,             # right arm
+         0.52, 0.5,  0.0,  2,  0.0,  0.0,  0.0,             # left arm
+         -1.0, -1.0  
+    ]),
+
+    "akimbo_3": np.array([
+        -0.52, -0.4,  3,  2,  0.0,   -1.571,  0.0,             # right arm
+         0.52, 0.5,  0.0,  2,  0.0,  0.0,  0.0,             # left arm
+         -1.0, -1.0    
+    ]),
+
+    "akimbo_4": np.array([
+        -0.52, -0.4,  3,  2,  0.0,   -1.571,  0.0,             # right arm
+         0.52, -0.4,  3,  2,  0.0,   -1.571,  0.0,             # left arm
+         -1.0, -1.0    
+    ]),
+
 }
 
 # 10 beats covering the first 5 seconds
@@ -233,6 +257,10 @@ SEQUENCE = [
     "diagonal_untangle_1",      # beat 46
     "diagonal_untangle_2",      # beat 47
     "arms_wide",                # beat 48
+    "akimbo_1",                 # beat 49
+    "akimbo_2",                 # beat 50
+    "akimbo_3",                 # beat 51
+    "akimbo_4",                 # beat 52
 ]
 
 
