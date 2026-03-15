@@ -4,7 +4,7 @@ import pygame
 
 from env_setup import make_env
 from beat_detection import detect_downbeats
-from choreography import build_cue_list, get_current_cue
+from choreography import build_cue_list, get_current_cue, HALFBEAT_PROB
 from pose_library import get_pose
 
 
@@ -24,7 +24,7 @@ def stop_audio():
 def run(audio_path="./assets/uptown_funk.mp3", play_audio=True):
     # beat detection
     bpm, beat_times, downbeat_times = detect_downbeats(audio_path)
-    cue_list = build_cue_list(beat_times)
+    cue_list = build_cue_list(beat_times, HALFBEAT_PROB)
 
     # environment
     env = make_env()
@@ -49,7 +49,8 @@ def run(audio_path="./assets/uptown_funk.mp3", play_audio=True):
 
             cue = get_current_cue(cue_list, current_time)
             if cue and cue["pose"] != last_pose:
-                print(f"t={current_time:.2f}s  beat: {cue['pose']}")
+                cue_type = "halfbeat" if cue.get("type") == "halfbeat" else "beat"
+                print(f"t={current_time:.2f}s  {cue_type}: {cue['pose']}")
                 current_action = get_pose(cue["pose"])
                 last_pose = cue["pose"]
 

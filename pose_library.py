@@ -134,7 +134,7 @@ POSES = {
 
     "shoulder_triangles": np.array([
         #s0,    s1,   e0,   e1,   w0,   w1,  w2
-        -0.52, 0.0,  -3.14,  2.04,  0.0,  2.04,  1.57,            
+        -0.52, 0.0, -3.14, 2.04,  0.0,  2.04,  1.57,            
          0.52, 0.0,  3.14, 2.04,  0.0,  2.04,  1.57,             
         0.0, 0.0   
     ]),
@@ -205,7 +205,39 @@ POSES = {
          -1.0, -1.0    
     ]),
 
+     "elbows_left": np.array([
+         -0.52, 0.0,  0.0,  1.57,  0.0,  -1.57,  0.0,            
+        -0.52, 0.0,  -1.57,  1.83,  1.57,  1.57,  0,             
+        0.0, 0.0  
+    ]),
+
+    "elbows_right": np.array([
+         0.52, 0.0,  1.57,  1.83,  1.57,  -1.57,  0.0,            
+        0.52, 0.0,  0.0, 1.57,  0.0,  -1.57,  0,             
+        0.0, 0.0
+    ]),
+
+    "L1": np.array([
+        -0.52, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,             # right arm
+         0.52, -1.57,  0.0,  0.0,  0.0,  0.0,  0.0,             # left arm
+         -1.0, -1.0
+    ]),
+
+    "L2": np.array([
+        -0.52, -1.57,  0.0,  0.0,  0.0,  0.0,  0.0,             # right arm
+         0.52, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,             # left arm
+         -1.0, -1.0 
+    ]),
+
+    # halfbeat pose
+    "arms_out_forward": np.array([
+        .90, 0.0,  0.0,  -0.52,  -0.1,  0.0,  0.0,             # right arm
+        -0.9, 0.0,  0.0, -0.52,  0.1,  0.0,  0.0,             # left arm
+         -1.0, -1.0
+    ]),
+
 }
+
 
 # 10 beats covering the first 5 seconds
 SEQUENCE = [
@@ -248,7 +280,7 @@ SEQUENCE = [
     "clap",                     # beat 37
     "point_left_wrists_down",   # beat 38
     "point_right_wrists_down",  # beat 39
-    "neutral",                  # beat 40
+    "arms_wide",                  # beat 40
     "shoulder_triangles",       # beat 41
     "shoulder_triangle_left",   # beat 42
     "shoulder_triangle_right",  # beat 43
@@ -261,8 +293,15 @@ SEQUENCE = [
     "akimbo_2",                 # beat 50
     "akimbo_3",                 # beat 51
     "akimbo_4",                 # beat 52
+    "elbows_left",              # beat 53
+    "elbows_right",             # beat 54
+    "L1",                       # beat 55
+    "L2",                       # beat 56
 ]
 
+HALFBEAT_SEQUENCE = [
+    "arms_out_forward"
+]
 
 def get_pose(name):
     if name not in POSES:
