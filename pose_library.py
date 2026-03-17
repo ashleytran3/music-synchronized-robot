@@ -278,7 +278,29 @@ POSES = {
          -1.0, -1.0  
     ]),
 
+    "move_9": np.array([
+        -0.52, 1,  3,  2,  0.0,   1.5,  0.0,             # right arm
+        0.52, 0.7,  0.0,  0.0,  0.0,  -1,  0.0,             # left arm
+         -1.0, -1.0  
+    ]),
 
+    "move_9_out": np.array([
+        -0.52, 1,  3,  2,  0.0,   -0.6,  0.0,             # right arm
+        0.52, 0.5,  0.0,  0.0,  0.0,  -1,  0.0,             # left arm
+         -1.0, -1.0  
+    ]),
+
+    "move_10": np.array([
+        1, 0.0,  2,  1,  0.0,  -1,  0.0,             # right arm
+        -0.4, 0.0,  -1.5,  2,  0.0,  -1,  0.0,             # left arm
+        -1.0, -1.0  
+    ]),
+
+    "move_11": np.array([
+        -0.52, 0.0,  2,  1.6,  0.0,  0.0,  0.0,             # right arm
+        0.52, 0.0,  -2,  1.6,  0.0,  0.0,  0.0,             # left arm
+        -1.0, -1.0  
+    ]),
 
     # halfbeat pose
     "arms_out_forward": np.array([
@@ -356,6 +378,17 @@ SEQUENCE = [
     "move_6",                   # beat 62
     "move_7",                   # beat 63
     "move_8",                   # beat 64
+    "move_9",                   # beat 65
+    "move_9",                   # beat 66
+    "move_9_out",               # beat 67
+    "move_9",                   # beat 68
+    "move_10",                  # beat 69
+    "move_11",                  # beat 70
+    "arms_wide",                # beat 71
+    "move_11",                  # beat 72
+    "move_9",                   # beat 73
+    "move_9_out",               # beat 74
+    "move_9",                   # beat 75
 ]
 
 HALFBEAT_SEQUENCE = [

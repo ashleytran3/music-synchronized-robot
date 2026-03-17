@@ -7,7 +7,7 @@ def build_cue_list(beat_times, HALFBEAT_PROB):
     cue_list = []
 
     # change this hardcoded time value later
-    for i, beat_time in enumerate(beat_times[:64]):
+    for i, beat_time in enumerate(beat_times[:75]):
         pose_name = SEQUENCE[i]
         cue_list.append({
             "time": float(beat_time),
