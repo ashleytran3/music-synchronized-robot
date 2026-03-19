@@ -309,6 +309,65 @@ POSES = {
          -1.0, -1.0
     ]),
 
+    "wave1": np.array([
+        -0.52, 0.0,  0.0,  0.0,  0.0,  0.52,  0.0,             # right arm
+         0.52, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,             # left arm
+         -1.0, -1.0 
+    ]),
+
+    "wave2": np.array([
+         -0.52, -0.2,  0.0,  0.6,  0.0,  -0.52,  0.0,             # right arm
+         0.52, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,             # left arm
+         -1.0, -1.0 
+    ]),
+
+    "wave3": np.array([
+        -0.52, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,             # right arm
+        0.52, -0.2,  0.0,  0.6,  0.0,  -0.52,  0.0,             # left arm
+        -1.0, -1.0
+    ]),
+
+    "wave4": np.array([
+        -0.52, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,             # right arm
+         0.52, 0.0,  0.0,  0.0,  0.0,  0.52,  0.0,             # left arm
+         -1.0, -1.0 
+    ]),
+
+    "arms_down": np.array([
+        -0.52, 1.3,  0.0,  0.0,  0.0,  0.0,  0.0,             # right arm
+        0.52, 1.3,  0.0,  0.0,  0.0,  0.0,  0.0,             # left arm
+        -1.0, -1.0  
+    ]),
+
+    "elbow_push_1": np.array([
+         -0.52, 1.3,  0.0,  0.0,  0.0,  0.0,  0.0,   # right
+        0.52, 0, -1.5,  2,  0.0,  1.5,  0.0,   # left
+        -1.0, -1.0
+    ]),
+
+    "elbow_push_2": np.array([
+        -0.52, 0,  1.5,  2,  0.0,  1.5,  0.0,   # right
+        0.52, 1.3, 0.0,  0.0,  0.0,  0.0,  0.0,   # left
+        -1.0, -1.0
+    ]),
+
+    "S1": np.array([
+         -0.52, 0.0,  3.14,  1.57,  0.0,  0.0,  0.0,             # right arm
+        0.52, 0.0,  0.0,  1.57,  0.0,  0.0,  0.0,             # left arm
+        -1.0, -1.0  
+    ]),
+
+    "S2": np.array([
+         -0.52, 0.0,  0.0,  1.57,  0.0,  0.0,  0.0,             # right arm
+        0.52, 0.0,  3.14,  1.57,  0.0,  0.0,  0.0,             # left arm
+        -1.0, -1.0  
+    ]),
+
+    "point": np.array([
+         -0.52, 0.5,  0.0,  2,  0.0,  0.0,  0.0,             # right arm
+        -0.7, 0.0,  0.0, 0,  0.0,  0.0,  0.0,   
+       -1.0, -1.0 
+    ])
 }
 
 
@@ -389,6 +448,78 @@ SEQUENCE = [
     "move_9",                   # beat 73
     "move_9_out",               # beat 74
     "move_9",                   # beat 75
+    "point_left_wrists_down",   # beat 76
+    "point_right_wrists_down",  # beat 77
+    "point_left_wrists_down",   # beat 78
+    "point_right_wrists_down",  # beat 79
+    "move_9",                   # beat 80
+    "move_9",                   # beat 81
+    "move_9_out",               # beat 82
+    "move_9",                   # beat 83
+    "akimbo_1",                 # beat 84
+    "akimbo_2",                 # beat 85
+    "akimbo_3",                 # beat 86
+    "akimbo_4",                 # beat 87
+    "move_9",                   # beat 88
+    "move_9",                   # beat 89
+    "move_9_out",               # beat 90
+    "move_9",                   # beat 91
+    "L1",
+    "L2",
+    "point_left",
+    "point_right",
+    "arms_wide",                # beat 92
+    "wave1",                    # beat 93
+    "wave2",                    # beat 94
+    "wave3",                    # beat 95
+    "arms_wide",                    # beat 96
+    "wave1",
+    "wave2",
+    "wave3",
+    "arms_wide",
+    "wave1",
+    "wave2",
+    "wave3",
+    "arms_wide",
+    "elbow_push_1",
+    "elbow_push_2",
+    "elbow_push_1",
+    "elbow_push_2",
+    "elbow_push_1",
+    "elbow_push_2",
+    "elbow_push_1",
+    "elbow_push_2",
+    "elbow_push_1",
+    "elbow_push_2",
+    "elbow_push_1",
+    "elbow_push_2",
+    "elbow_push_1",
+    "elbow_push_2",
+    "elbow_push_1",
+    "elbow_push_2",
+    "arms_wide",
+    "point",
+    "point",
+    "point",
+    "S1",
+    "S2",
+    "S1",
+    "S2",
+    "S1",
+    "S2",
+    "S1",
+    "S2",
+    "clap",
+    "point_left",
+    "point_right",
+    "point_left",
+    "point_right",
+    "point_left",
+    "point_right",
+    "point_left",
+    "point_right",
+    "point_left",
+    "point_right",
 ]
 
 HALFBEAT_SEQUENCE = [

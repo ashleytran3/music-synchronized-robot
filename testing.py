@@ -1,7 +1,7 @@
 from pid import PID
 from env_setup import make_env
 import numpy as np
-
+from pose_library import POSES
 # limits
 # s0: -1.702 to  1.702
 # s1: -2.147 to  1.047
@@ -21,12 +21,10 @@ def run():
     # 0.52, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,             # left arm
     # -1.0, -1.0   
     
-    current_action = np.array([
-        #s0,    s1,   e0,   e1,   w0,   w1,  w2
-        -0.52, 0.0,  0.0,  0.0,  0.0,  0.52,  0.0,             # right arm
-         0.52, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,             # left arm
-         -1.0, -1.0  
-    ])
+    # down -0.52, 1.3,  0.0,  0.0,  0.0,  0.0,  0.0,             # right arm
+
+    # move_5 for chorus
+    current_action = np.array(POSES['move_11'])
 
     while True:
         obs, _, _, _ = env.step(current_action)

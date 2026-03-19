@@ -6,6 +6,8 @@ from env_setup import make_env
 from beat_detection import detect_downbeats
 from choreography import build_cue_list, get_current_cue, HALFBEAT_PROB
 from pose_library import get_pose
+from success_criteria import SuccessTracker
+
 
 
 def start_audio(audio_path):
@@ -30,6 +32,9 @@ def run(audio_path="./assets/uptown_funk.mp3", play_audio=True):
     env = make_env()
     obs = env.reset()
 
+    # tracker for success criteria
+    tracker = SuccessTracker()
+
     last_pose = "neutral"
     current_action = get_pose("neutral")
 
@@ -43,7 +48,7 @@ def run(audio_path="./assets/uptown_funk.mp3", play_audio=True):
         while True:
             current_time = time.time() - start_time
 
-            if current_time > 80.0:
+            if current_time > 78.0:
                 print("Done!")
                 break
 
@@ -54,7 +59,14 @@ def run(audio_path="./assets/uptown_funk.mp3", play_audio=True):
                 current_action = get_pose(cue["pose"])
                 last_pose = cue["pose"]
 
+                tracker.log_cue(
+                    target_time=cue["time"],
+                    actual_time=current_time,
+                    target_action=current_action,
+                )
+
             obs, _, _, _ = env.step(current_action)
+            tracker.log_step(obs, current_action, current_time=current_time)
             env.render()
 
     except KeyboardInterrupt:
@@ -63,6 +75,7 @@ def run(audio_path="./assets/uptown_funk.mp3", play_audio=True):
     finally:
         stop_audio()
         env.close()
+        tracker.report(save_path="success_criteria.png")
 
 
 if __name__ == "__main__":
