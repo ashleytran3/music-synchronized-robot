@@ -25,7 +25,7 @@ def run():
 
     # move_5 for chorus
     current_action = np.array(POSES['move_11'])
-
+    print(obs["robot0_joint_pos"].shape)
     while True:
         obs, _, _, _ = env.step(current_action)
         env.render()

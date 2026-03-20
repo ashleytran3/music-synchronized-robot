@@ -464,62 +464,62 @@ SEQUENCE = [
     "move_9",                   # beat 89
     "move_9_out",               # beat 90
     "move_9",                   # beat 91
-    "L1",
-    "L2",
-    "point_left",
-    "point_right",
-    "arms_wide",                # beat 92
-    "wave1",                    # beat 93
-    "wave2",                    # beat 94
-    "wave3",                    # beat 95
-    "arms_wide",                    # beat 96
-    "wave1",
-    "wave2",
-    "wave3",
-    "arms_wide",
-    "wave1",
-    "wave2",
-    "wave3",
-    "arms_wide",
-    "elbow_push_1",
-    "elbow_push_2",
-    "elbow_push_1",
-    "elbow_push_2",
-    "elbow_push_1",
-    "elbow_push_2",
-    "elbow_push_1",
-    "elbow_push_2",
-    "elbow_push_1",
-    "elbow_push_2",
-    "elbow_push_1",
-    "elbow_push_2",
-    "elbow_push_1",
-    "elbow_push_2",
-    "elbow_push_1",
-    "elbow_push_2",
-    "arms_wide",
-    "point",
-    "point",
-    "point",
-    "S1",
-    "S2",
-    "S1",
-    "S2",
-    "S1",
-    "S2",
-    "S1",
-    "S2",
-    "clap",
-    "point_left",
-    "point_right",
-    "point_left",
-    "point_right",
-    "point_left",
-    "point_right",
-    "point_left",
-    "point_right",
-    "point_left",
-    "point_right",
+    "L1",                       # beat 92
+    "L2",                       # beat 93
+    "point_left",               # beat 94
+    "point_right",              # beat 95
+    "arms_wide",                # beat 96
+    "wave1",                    # beat 97
+    "wave2",                    # beat 98
+    "wave3",                    # beat 99
+    "arms_wide",                # beat 100
+    "wave1",                    # beat 101
+    "wave2",                    # beat 102
+    "wave3",                    # beat 103
+    "arms_wide",                # beat 104
+    "wave1",                    # beat 105
+    "wave2",                    # beat 106
+    "wave3",                    # beat 107
+    "arms_wide",                # beat 108
+    "elbow_push_1",             # beat 109
+    "elbow_push_2",             # beat 110
+    "elbow_push_1",             # beat 111
+    "elbow_push_2",             # beat 112
+    "elbow_push_1",             # beat 113
+    "elbow_push_2",             # beat 114
+    "elbow_push_1",             # beat 115
+    "elbow_push_2",             # beat 116
+    "elbow_push_1",             # beat 117
+    "elbow_push_2",             # beat 118
+    "elbow_push_1",             # beat 119
+    "elbow_push_2",             # beat 120
+    "elbow_push_1",             # beat 121
+    "elbow_push_2",             # beat 122
+    "elbow_push_1",             # beat 123
+    "elbow_push_2",             # beat 124
+    "arms_wide",                # beat 125
+    "point",                    # beat 126
+    "point",                    # beat 127
+    "point",                    # beat 128  
+    "S1",                       # beat 129
+    "S2",                       # beat 130
+    "S1",                       # beat 131
+    "S2",                       # beat 132
+    "S1",                       # beat 133
+    "S2",                       # beat 134
+    "S1",                       # beat 135
+    "S2",                       # beat 136
+    "clap",                     # beat 137
+    "point_left",               # beat 138
+    "point_right",              # beat 139
+    "point_left",               # beat 140
+    "point_right",              # beat 141
+    "point_left",               # beat 142
+    "point_right",              # beat 143
+    "point_left",               # beat 144
+    "point_right",              # beat 145
+    "point_left",               # beat 146
+    "point_right",              # beat 147
 ]
 
 HALFBEAT_SEQUENCE = [

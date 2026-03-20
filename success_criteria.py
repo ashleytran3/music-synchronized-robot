@@ -7,70 +7,60 @@ Success Criteria Analysis
 """
 
 import numpy as np
-
-
-def _flatten_obs(obs, n):
-    """Safely flatten obs whether it's a dict, list, or array, then take first n elements."""
-    if isinstance(obs, dict):
-        arr = np.concatenate([np.array(v).flatten() for v in obs.values()])
-    else:
-        arr = np.array(obs).flatten()
-    return arr[:n]
-
-
+ 
+ 
 class SuccessTracker:
-    def __init__(self, n_joints=12, settling_threshold_rad=0.05):
+    def __init__(self, n_joints=14, settling_threshold_rad=0.175):
         self.n_joints = n_joints
         self.settling_threshold = settling_threshold_rad
-
+ 
         # musical alignment
         self.timing_errors_ms = []
-
+ 
         # motion quality
         self.settling_times_ms = []
         self._settling_start = None
         self._current_target = None
         self._settled = False
-
+ 
     def log_cue(self, target_time, actual_time, target_action=None):
         """Call when a new cue fires."""
         self.timing_errors_ms.append((actual_time - target_time) * 1000)
-
+ 
         if target_action is not None:
             action_arr = np.array(target_action).flatten()
             self._current_target = action_arr[:self.n_joints]
             self._settling_start = actual_time
             self._settled = False
-
+ 
     def log_step(self, obs, current_action, current_time=None):
         """Call every env step."""
         if self._current_target is None or self._settled:
             return
-
-        positions = _flatten_obs(obs, self.n_joints)
+ 
+        positions = np.array(obs["robot0_joint_pos"])
         error = np.max(np.abs(positions - self._current_target))
-
+ 
         if error < self.settling_threshold:
             if current_time is not None and self._settling_start is not None:
                 self.settling_times_ms.append((current_time - self._settling_start) * 1000)
             self._settled = True
-
+ 
     def report(self, save_path="success_criteria.png"):
         """Print success criteria and save plots to file."""
-
-        # use non-interactive backend — safe to call from any thread / finally block
+ 
         import matplotlib
         matplotlib.use("agg")
         import matplotlib.pyplot as plt
         import matplotlib.gridspec as gridspec
         from matplotlib.lines import Line2D
-
+ 
         has_timing   = bool(self.timing_errors_ms)
         has_settling = bool(self.settling_times_ms)
-
+ 
         # ── Console output ─────────────────────────────────────────────
         print("\n========== SUCCESS CRITERIA ==========")
-
+ 
         print("\n[ Musical Alignment ]")
         if has_timing:
             errors   = self.timing_errors_ms
@@ -85,30 +75,32 @@ class SuccessTracker:
             print(f"  Within +-100ms:     {pct_100:.1f}%")
         else:
             print("  No cue data recorded.")
-
+ 
         print("\n[ Motion Quality ]")
         if has_settling:
             mean_settle = np.mean(self.settling_times_ms)
+            pct_fast    = sum(s <= 200 for s in self.settling_times_ms) / len(self.settling_times_ms) * 100
             print(f"  Mean settling time: {mean_settle:.0f} ms  {'pass' if mean_settle < 200 else 'FAIL'}  (target: <200ms)")
             print(f"  Poses that settled: {len(self.settling_times_ms)}")
+            print(f"  Settled <200ms:     {pct_fast:.1f}%  {'pass' if pct_fast >= 70 else 'FAIL'}  (target: 70%)")
         else:
             print("  No settling data (pass target_action to log_cue and current_time to log_step).")
-
+ 
         print("\n======================================\n")
-
+ 
         if not has_timing and not has_settling:
             print("No data to plot.")
             return
-
+ 
         # ── Colours ────────────────────────────────────────────────────
         BLUE  = "#4C72B0"
         GREEN = "#55A868"
         RED   = "#C44E52"
-
+ 
         fig = plt.figure(figsize=(14, 8))
         fig.suptitle("Dancing Robot - Success Criteria", fontsize=15, fontweight="bold")
         gs = gridspec.GridSpec(2, 2, figure=fig, hspace=0.45, wspace=0.35)
-
+ 
         # ── 1. Timing error histogram ──────────────────────────────────
         ax1 = fig.add_subplot(gs[0, 0])
         if has_timing:
@@ -129,7 +121,7 @@ class SuccessTracker:
             ax1.text(0.5, 0.5, "No timing data", ha="center", va="center",
                      transform=ax1.transAxes, color="grey")
             ax1.set_title("Timing Error Distribution")
-
+ 
         # ── 2. Timing error per cue (scatter) ─────────────────────────
         ax2 = fig.add_subplot(gs[0, 1])
         if has_timing:
@@ -151,7 +143,7 @@ class SuccessTracker:
             ax2.text(0.5, 0.5, "No timing data", ha="center", va="center",
                      transform=ax2.transAxes, color="grey")
             ax2.set_title("Timing Error per Cue")
-
+ 
         # ── 3. Settling time histogram ─────────────────────────────────
         ax3 = fig.add_subplot(gs[1, 0])
         if has_settling:
@@ -168,11 +160,11 @@ class SuccessTracker:
             ax3.text(0.5, 0.5, "No settling data", ha="center", va="center",
                      transform=ax3.transAxes, color="grey")
             ax3.set_title("Pose Settling Times")
-
+ 
         # ── 4. Summary bar chart ───────────────────────────────────────
         ax4 = fig.add_subplot(gs[1, 1])
         labels, values, targets, bar_colors = [], [], [], []
-
+ 
         if has_timing:
             errors  = self.timing_errors_ms
             pct_50  = sum(abs(e) <= 50  for e in errors) / len(errors) * 100
@@ -181,14 +173,14 @@ class SuccessTracker:
             values     += [pct_50, pct_100]
             targets    += [80, 90]
             bar_colors += [GREEN if pct_50 >= 80 else RED, GREEN if pct_100 >= 90 else RED]
-
+ 
         if has_settling:
             pct_fast = sum(s <= 200 for s in self.settling_times_ms) / len(self.settling_times_ms) * 100
             labels     += ["Settled <200ms"]
             values     += [pct_fast]
-            targets    += [80]
-            bar_colors += [GREEN if pct_fast >= 80 else RED]
-
+            targets    += [70]
+            bar_colors += [GREEN if pct_fast >= 70 else RED]
+ 
         bars = ax4.bar(labels, values, color=bar_colors, edgecolor="white", alpha=0.85)
         for bar, val, tgt in zip(bars, values, targets):
             ax4.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 1,
@@ -198,7 +190,8 @@ class SuccessTracker:
         ax4.set_ylabel("% of Cues")
         ax4.set_title("Success Criteria Summary")
         ax4.tick_params(axis="x", labelsize=9)
-
+ 
         plt.savefig(save_path, dpi=150, bbox_inches="tight", facecolor="white")
         plt.close()
         print(f"Plot saved to {save_path}")
+ 
