@@ -25,9 +25,9 @@ def run():
 
     # move_5 for chorus
     current_action = np.array([
-         -0.52, 0.5,  0.0,  2,  0.0,  0.0,  0.0,             # right arm
-        -0.7, 0.0,  -0.78,  1.57,  0.0,  0.0,  0.0, 
-       -1.0, -1.0 
+        -0.52, 0.8,  0.0,  1.57,  0.0,  -1.57,  0.0,   # right arm
+        0.52, -0.8, 0.0,  1.57,  0.0,   1.57,  0.0,   # left arm
+        -1.0, -1.0
     ])
     print(obs["robot0_joint_pos"].shape)
     while True:

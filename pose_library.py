@@ -530,7 +530,7 @@ SEQUENCE = [
     "point_right",              # beat 143
     "point_left",               # beat 144
     "point_right",              # beat 145
-    "point_up",
+    "point_up", 
     "point_down",
     "point_up",
     "point_down",
@@ -538,7 +538,13 @@ SEQUENCE = [
     "point_down",
     "point_up",
     "point_down",
+    "arms_wide",
     "clap",
+    "arms_wide",
+    "move_1",
+    "move_2",
+    "move_1",
+    "move_2",
 ]
 
 HALFBEAT_SEQUENCE = [

@@ -2,7 +2,7 @@ import numpy as np
 from pose_library import get_pose, SEQUENCE, HALFBEAT_SEQUENCE
 
 CHORUS_START = 67.0
-CHORUS_END = 84.0
+CHORUS_END = 83.5
 HALFBEAT_PROB = 0.0
 
 def build_cue_list(beat_times, HALFBEAT_PROB):
