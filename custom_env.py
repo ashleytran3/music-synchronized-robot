@@ -5,6 +5,7 @@ from robosuite.models.arenas import EmptyArena
 from robosuite.models.tasks import ManipulationTask
 
 
+# custom environment without table
 class DanceEnv(ManipulationEnv):
     def __init__(self, **kwargs):
         kwargs.pop("table_full_size", None)

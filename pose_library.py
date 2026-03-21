@@ -9,6 +9,16 @@ import numpy as np
 # w1 -> wrist up/down
 # w2 -> wrist twist
 
+# joint limits
+# s0: -1.702 to  1.702
+# s1: -2.147 to  1.047
+# e0: -3.054 to  3.054
+# e1: -0.050 to  2.618
+# w0: -3.059 to  3.059
+# w1: -1.571 to  2.094
+# w2: -3.059 to  3.059
+
+# pose library used for choreography
 POSES = {
     # Arms crossed
     "neutral": np.array([

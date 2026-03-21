@@ -5,6 +5,7 @@ CHORUS_START = 67.0
 CHORUS_END = 83.5
 HALFBEAT_PROB = 0.0
 
+# function to align poses with beats
 def build_cue_list(beat_times, HALFBEAT_PROB):
     cue_list = []
 

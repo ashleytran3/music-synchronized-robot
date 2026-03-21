@@ -57,3 +57,8 @@ mjpython main.py
 | Mean settling time | 128ms | <200ms | Pass |
 
 ## CS 188 — UCLA Winter 2026
+<a href="https://www.researchgate.net/figure/The-7-joints-of-the-Baxter-robot-arm-Joints-S0-S1-comprise-the-shoulder-E0-E1-the_fig2_346549361"><img src="https://www.researchgate.net/profile/Shuang-Cong/publication/346549361/figure/fig2/AS:11431281262787878@1721778404886/The-7-joints-of-the-Baxter-robot-arm-Joints-S0-S1-comprise-the-shoulder-E0-E1-the.png" alt="The 7 joints of the Baxter robot arm. Joints S0, S1 comprise the shoulder, E0, E1 the elbow, and W0, W1, W2 the wrist."/></a>
+*Figure 1: The 7 joints of the Baxter robot arm. Joints S0, S1 comprise the shoulder, E0, E1 the elbow, and W0, W1, W2 the wrist. Source: [1]*
+
+## References  
+[1] Model-Based Reinforcement Learning For Robot Control - Scientific Figure on ResearchGate. Available from: https://www.researchgate.net/figure/The-7-joints-of-the-Baxter-robot-arm-Joints-S0-S1-comprise-the-shoulder-E0-E1-the_fig2_346549361 [accessed 21 Mar 2026]
