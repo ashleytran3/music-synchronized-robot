@@ -52,7 +52,7 @@ mjpython main.py
 | Metric | Value | Target | Status |
 |---|---|---|---|
 | Timing accuracy (±50ms) | 100% | 80% | Pass |
-| Mean timing error | +1.6ms | — | - |
+| Mean timing error | +1.6ms | -- | -- |
 | Poses settled <200ms | 91.7% | 70% | Pass |
 | Mean settling time | 128ms | <200ms | Pass |
 
@@ -64,4 +64,4 @@ mjpython main.py
 *Figure 1: The 7 joints of the Baxter robot arm. Joints S0, S1 comprise the shoulder, E0, E1 the elbow, and W0, W1, W2 the wrist. Source: [1]*
 
 ## References  
-[1] Model-Based Reinforcement Learning For Robot Control - Scientific Figure on ResearchGate. Available from: https://www.researchgate.net/figure/The-7-joints-of-the-Baxter-robot-arm-Joints-S0-S1-comprise-the-shoulder-E0-E1-the_fig2_346549361 [accessed 21 Mar 2026]
+[1] Model-Based Reinforcement Learning For Robot Control - Scientific Figure on ResearchGate. Available from: https://www.researchgate.net/figure/The-7-joints-of-the-Baxter-robot-arm-Joints-S0-S1-comprise-the-shoulder-E0-E1-the_fig2_346549361 [accessed 20 Mar 2026]
