@@ -60,6 +60,7 @@ mjpython main.py
 <a href="https://www.researchgate.net/figure/The-7-joints-of-the-Baxter-robot-arm-Joints-S0-S1-comprise-the-shoulder-E0-E1-the_fig2_346549361">
 <img src="assets/baxter_research_gate.webp" alt="The 7 joints of the Baxter robot arm"/>
 </a>
+
 *Figure 1: The 7 joints of the Baxter robot arm. Joints S0, S1 comprise the shoulder, E0, E1 the elbow, and W0, W1, W2 the wrist. Source: [1]*
 
 ## References  
