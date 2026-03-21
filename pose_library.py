@@ -367,6 +367,18 @@ POSES = {
          -0.52, 0.5,  0.0,  2,  0.0,  0.0,  0.0,             # right arm
         -0.7, 0.0,  0.0, 0,  0.0,  0.0,  0.0,   
        -1.0, -1.0 
+    ]),
+
+    "point_up": np.array([
+         -0.52, 0.5,  0.0,  2,  0.0,  0.0,  0.0,             # right arm
+        0.52, -0.52,  1.57, 0,  0.0,  0.0,  0.0,   
+       -1.0, -1.0 
+    ]),
+
+    "point_down": np.array([
+         -0.52, 0.5,  0.0,  2,  0.0,  0.0,  0.0,             # right arm
+        -0.7, 0.0,  -0.78,  1.57,  0.0,  0.0,  0.0, 
+       -1.0, -1.0 
     ])
 }
 
@@ -518,8 +530,15 @@ SEQUENCE = [
     "point_right",              # beat 143
     "point_left",               # beat 144
     "point_right",              # beat 145
-    "point_left",               # beat 146
-    "point_right",              # beat 147
+    "point_up",
+    "point_down",
+    "point_up",
+    "point_down",
+    "point_up",
+    "point_down",
+    "point_up",
+    "point_down",
+    "clap",
 ]
 
 HALFBEAT_SEQUENCE = [

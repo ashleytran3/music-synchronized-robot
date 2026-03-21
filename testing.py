@@ -24,7 +24,11 @@ def run():
     # down -0.52, 1.3,  0.0,  0.0,  0.0,  0.0,  0.0,             # right arm
 
     # move_5 for chorus
-    current_action = np.array(POSES['move_11'])
+    current_action = np.array([
+         -0.52, 0.5,  0.0,  2,  0.0,  0.0,  0.0,             # right arm
+        -0.7, 0.0,  -0.78,  1.57,  0.0,  0.0,  0.0, 
+       -1.0, -1.0 
+    ])
     print(obs["robot0_joint_pos"].shape)
     while True:
         obs, _, _, _ = env.step(current_action)

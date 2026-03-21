@@ -4,7 +4,7 @@ import pygame
 
 from env_setup import make_env
 from beat_detection import detect_downbeats
-from choreography import build_cue_list, get_current_cue, HALFBEAT_PROB
+from choreography import build_cue_list, get_current_cue, CHORUS_END, HALFBEAT_PROB
 from pose_library import get_pose
 from success_criteria import SuccessTracker
 
@@ -48,7 +48,7 @@ def run(audio_path="./assets/uptown_funk.mp3", play_audio=True):
         while True:
             current_time = time.time() - start_time
 
-            if current_time > 78.0:
+            if current_time > CHORUS_END:
                 print("Done!")
                 break
 
