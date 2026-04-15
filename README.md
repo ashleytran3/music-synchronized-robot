@@ -4,6 +4,10 @@
 
 A dancing robot system that automatically extracts beats from an audio track and synchronizes Baxter's arm movements to the music using a custom PID controller, simulated in robosuite/MuJoCo.
 
+## My Contributions
+- Designed and implemented robot pose sequences and choreography
+- Developed success criteria evaluation framework, focusing on musical alignment anad motion quality
+  
 ## Robot
 - **Robot:** Baxter (dual-arm, 14 DOF)
 - **Gripper:** Robotiq85
